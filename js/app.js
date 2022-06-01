@@ -76,9 +76,11 @@ console.log(membersList[0].imgFile)
 console.table(membersList);
 
 /* 
-MILESTONE 2: 
+MILESTONE 2 && 3: 
 print datas inside a container into html page dynamically, 
 creating for each member of the team a html element that contains their data.
+------------
+Stylize section creating each member of the team card
 */
 
 function createCards (user, indexReference) {
@@ -100,6 +102,25 @@ function createCards (user, indexReference) {
     imgElement.src = user[indexReference].imgFile;
     cardImageSection.appendChild(imgElement);
 
+    // creating card text section
+
+    const cardText = document.createElement('div');
+    cardText.classList.add('card-text');
+    teamCardSection.appendChild(cardText);
+
+    //creating elements inside card text section
+
+    const nameSurname = document.createElement(`h3`);
+    const rule = document.createElement(`p`);
+
+    nameSurname.innerHTML = `${user[indexReference].name}, ${user[indexReference].surname}`;
+    rule.innerHTML = `${user[indexReference].rule}` 
+
+    cardText.appendChild(nameSurname);
+    cardText.appendChild(rule);
+
 }
 
-createCards(membersList, 0);
+for  (let i = 0; i < 6; i++) {
+    createCards(membersList, i);
+}
