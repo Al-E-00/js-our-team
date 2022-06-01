@@ -71,6 +71,7 @@ const membersList = [
         imgFile: 'img/barbara-ramos-graphic-designer.jpg'
     }
 ]
+console.log(membersList[0].imgFile)
 
 console.table(membersList);
 
@@ -80,7 +81,7 @@ print datas inside a container into html page dynamically,
 creating for each member of the team a html element that contains their data.
 */
 
-function createCards (user, indexNum) {
+function createCards (user, indexReference) {
     // team-card div created
 
     const teamCardSection = document.createElement(`div`);
@@ -95,9 +96,9 @@ function createCards (user, indexNum) {
 
     // creating the link to the element img
 
-    const imgElement = document.querySelector('.card-image').append('img');
-    imgElement.src = [indexNum]user.imgFile;
-
+    const imgElement = document.createElement('img');
+    imgElement.src = user[indexReference].imgFile;
+    cardImageSection.appendChild(imgElement);
 
 }
 
