@@ -86,13 +86,13 @@ Stylize section creating each member of the team card
 function createCards (user, indexReference) {
     // team-card div created
 
-    const teamCardSection = document.createElement(`div`);
-    teamCardSection.classList.add("team-card");
-    document.querySelector(".team-container").append(teamCardSection);
+    const teamCardSection = document.createElement('div');
+    teamCardSection.classList.add('team-card');
+    document.querySelector('.team-container').append(teamCardSection);
 
     //creating card-image section
     
-    const cardImageSection = document.createElement(`div`);
+    const cardImageSection = document.createElement('div');
     cardImageSection.classList.add('card-image');
     teamCardSection.append(cardImageSection);
 
@@ -110,8 +110,8 @@ function createCards (user, indexReference) {
 
     //creating elements inside card text section
 
-    const nameSurname = document.createElement(`h3`);
-    const rule = document.createElement(`p`);
+    const nameSurname = document.createElement('h3');
+    const rule = document.createElement('p');
 
     nameSurname.innerHTML = `${user[indexReference].name}, ${user[indexReference].surname}`;
     rule.innerHTML = `${user[indexReference].rule}` 
