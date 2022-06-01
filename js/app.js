@@ -7,11 +7,11 @@
 */
 /* 
 MILESTONE 1: 
-print on console members list, writing separetely every component details
+print inside the console the members list, writing separetely every components details
 */
 /* 
 MILESTONE 2: 
-print out datas inside a container into html page dynamically, 
+print datas inside a container into html page dynamically, 
 creating for each member of the team a html element that contains their data.
 */
 /* 
@@ -29,3 +29,76 @@ smaller funcitons
 6. How we can tranform it into a visible image inside the html?
 */
 
+/* 
+MILESTONE 1: 
+print inside the console the members list, writing separetely every components details
+*/
+const membersList = [
+    {
+        name: 'Wayne',
+        surname: 'Barnett',
+        rule: 'Founder & CEO',
+        imgFile: 'img/wayne-barnett-founder-ceo.jpg'
+    },
+    {
+        name: 'Angela',
+        surname: 'Caroll',
+        rule: 'Chief Editor',
+        imgFile: 'img/angela-caroll-chief-editor.jpg'
+    },
+    {
+        name: 'Walter',
+        surname: 'Gordon',
+        rule: 'Office Manage',
+        imgFile: 'img/walter-gordon-office-manager.jpg'
+    },
+    {
+        name: 'Angela',
+        surname: 'Lopez',
+        rule: 'Social Media Manager',
+        imgFile: 'img/angela-lopez-social-media-manager.jpg'
+    },
+    {
+        name: 'Scott',
+        surname: 'Estrada',
+        rule: 'Developer',
+        imgFile: 'img/scott-estrada-developer.jpg'
+    },
+    {
+        name: 'Barbara',
+        surname: 'Ramos',
+        rule: 'Graphic Designer',
+        imgFile: 'img/barbara-ramos-graphic-designer.jpg'
+    }
+]
+
+console.table(membersList);
+
+/* 
+MILESTONE 2: 
+print datas inside a container into html page dynamically, 
+creating for each member of the team a html element that contains their data.
+*/
+
+function createCards (user, indexNum) {
+    // team-card div created
+
+    const teamCardSection = document.createElement(`div`);
+    teamCardSection.classList.add("team-card");
+    document.querySelector(".team-container").append(teamCardSection);
+
+    //creating card-image section
+    
+    const cardImageSection = document.createElement(`div`);
+    cardImageSection.classList.add('card-image');
+    teamCardSection.append(cardImageSection);
+
+    // creating the link to the element img
+
+    const imgElement = document.querySelector('.card-image').append('img');
+    imgElement.src = [indexNum]user.imgFile;
+
+
+}
+
+createCards(membersList, 0);
