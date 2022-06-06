@@ -118,25 +118,25 @@ function createCards (user, indexReference) {
     teamCardSection.classList.add('team-card');
     document.querySelector('.team-container').append(teamCardSection);
 
-    //creating card-image section
+    // card-image section
     
     const cardImageSection = document.createElement('div');
     cardImageSection.classList.add('card-image');
     teamCardSection.append(cardImageSection);
 
-    // creating the link to the element img
+    //  link to the element img
 
     const imgElement = document.createElement('img');
     imgElement.src = user[indexReference].imgFile;
     cardImageSection.appendChild(imgElement);
 
-    // creating card text section
+    //  card text section
 
     const cardText = document.createElement('div');
     cardText.classList.add('card-text');
     teamCardSection.appendChild(cardText);
 
-    //creating elements inside card text section
+    // elements inside card text section
 
     const nameSurname = document.createElement('h3');
     const rule = document.createElement('p');
