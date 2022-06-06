@@ -71,7 +71,15 @@ const membersList = [
         imgFile: 'img/barbara-ramos-graphic-designer.jpg'
     }
 ]
-console.log(membersList[0].imgFile)
+
+for (let i = 0; i < membersList.length; i++) {
+    // team member that is equal to the actual index
+    //OBJECT with keyes name, rule, img
+    const teamMember = membersList[i];
+
+    //print name and rule for each member
+    console.log(`User: ${teamMember.name} - Rule: ${teamMember.rule}`);    
+}
 
 console.table(membersList);
 
