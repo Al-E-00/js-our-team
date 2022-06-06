@@ -72,16 +72,36 @@ const membersList = [
     }
 ]
 
-for (let i = 0; i < membersList.length; i++) {
+function printInConsole(arrayToPrint){
+    //basically arrayToPrint is undefined.
+    //for this motivation usually we have to do some check for the argument
+
+if(!arrayToPrint) {
+    console.error("arrayToPrint is not an array");
+
+    //We block the function because we don't have datas to print
+    return;
+}
+
+for (let i = 0; i < arrayToPrint.length; i++) {
     // team member that is equal to the actual index
     //OBJECT with keyes name, rule, img
-    const teamMember = membersList[i];
+    const teamMember = arrayToPrint[i];
 
     //print name and rule for each member
     console.log(`User: ${teamMember.name} - Rule: ${teamMember.rule}`);    
 }
 
+}
+
+//Invoke the function
+printInConsole(membersList);
+
+
+
+//table to view in a different way the datas
 console.table(membersList);
+
 
 /* 
 MILESTONE 2 && 3: 
